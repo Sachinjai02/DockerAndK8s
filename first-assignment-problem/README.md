@@ -26,6 +26,7 @@ docker run -ai --name pythonapp_container pythonApp:first
 
 ### Stop containers
 docker stop nodeapp_container
+###
 docker stop pythonapp_container
 
 ### Restart containers

@@ -30,5 +30,6 @@ docker stop pythonapp_container
 
 ### Restart containers
 docker start nodeapp_container
+###
 docker start -i pythonapp_container
 

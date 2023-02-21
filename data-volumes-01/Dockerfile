@@ -10,4 +10,6 @@ RUN npm install
 
 COPY . .
 
+# VOLUME [ "/app/node_modules"]
+
 CMD [ "node", "server.js"]

@@ -67,6 +67,7 @@ app.get('/people', async (req, res) => {
   }
 });
 
+//host.docker.internal domain lets a docker container access the host machine IP address
 mongoose.connect(
   'mongodb://host.docker.internal:27017/swfavorites',
   { useNewUrlParser: true,

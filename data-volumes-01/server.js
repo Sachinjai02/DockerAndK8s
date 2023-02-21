@@ -27,10 +27,10 @@ app.post('/create', async (req, res) => {
   const content = req.body.text;
 
   const adjTitle = title.toLowerCase();
-
+  console.log("dummy title");
   const tempFilePath = path.join(__dirname, 'temp', adjTitle + '.txt');
   const finalFilePath = path.join(__dirname, 'feedback', adjTitle + '.txt');
-
+  console.log(adjTitle);
   await fs.writeFile(tempFilePath, content);
   exists(finalFilePath, async (exists) => {
     if (exists) {

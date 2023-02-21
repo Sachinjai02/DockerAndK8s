@@ -2,11 +2,15 @@ FROM node
 
 WORKDIR /app
 
-EXPOSE 80
-
 COPY package.json .
 
 RUN npm install
+
+ARG DEFAULT_PORT=80
+
+ENV PORT $DEFAULT_PORT
+
+EXPOSE $PORT
 
 COPY . .
 

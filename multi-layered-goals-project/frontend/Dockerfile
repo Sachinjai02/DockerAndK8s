@@ -10,6 +10,6 @@ COPY . .
 
 EXPOSE 3000
 
-ENV SERVER_IP=localhost
+ENV SERVER_IP=35.154.236.11
 
 CMD ["npm", "start"]

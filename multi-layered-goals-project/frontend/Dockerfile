@@ -10,6 +10,4 @@ COPY . .
 
 EXPOSE 3000
 
-ENV APP_REACT_SERVER_IP localhost
-
-CMD npm start -- -APP_REACT_SERVER_IP=$APP_REACT_SERVER_IP
+CMD ["npm", "start"]

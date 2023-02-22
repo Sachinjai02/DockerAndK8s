@@ -10,12 +10,14 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  console.log('SERVER_IP: ' + SERVER_IP);
+
   useEffect(function () {
     async function fetchData() {
       setIsLoading(true);
 
       try {
-        const response = await fetch('http://SERVER_IP/goals');
+        const response = await fetch('http://' + SERVER_IP + '/goals');
 
         const resData = await response.json();
 
@@ -40,7 +42,7 @@ function App() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://SERVER_IP/goals', {
+      const response = await fetch('http://' + SERVER_IP + '/goals', {
         method: 'POST',
         body: JSON.stringify({
           text: goalText,
@@ -79,7 +81,7 @@ function App() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://SERVER_IP/goals/' + goalId, {
+      const response = await fetch('http://' + SERVER_IP + '/goals/' + goalId, {
         method: 'DELETE',
       });
 

@@ -5,6 +5,7 @@ import CourseGoals from './components/goals/CourseGoals';
 import ErrorAlert from './components/UI/ErrorAlert';
 
 function App() {
+  const SERVER_IP = process.env.SERVER_IP; 
   const [loadedGoals, setLoadedGoals] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -14,7 +15,7 @@ function App() {
       setIsLoading(true);
 
       try {
-        const response = await fetch('http://goals-backend/goals');
+        const response = await fetch('http://SERVER_IP/goals');
 
         const resData = await response.json();
 
@@ -39,7 +40,7 @@ function App() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://goals-backend/goals', {
+      const response = await fetch('http://SERVER_IP/goals', {
         method: 'POST',
         body: JSON.stringify({
           text: goalText,
@@ -78,7 +79,7 @@ function App() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://goals-backend/goals/' + goalId, {
+      const response = await fetch('http://SERVER_IP/goals/' + goalId, {
         method: 'DELETE',
       });
 

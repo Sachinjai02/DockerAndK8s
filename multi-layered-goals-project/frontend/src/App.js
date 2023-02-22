@@ -5,13 +5,11 @@ import CourseGoals from './components/goals/CourseGoals';
 import ErrorAlert from './components/UI/ErrorAlert';
 
 function App() {
-  //const SERVER_IP = process.env; 
   const [loadedGoals, setLoadedGoals] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  console.log('SERVER_IP: ' + SERVER_IP);
-
+  
   useEffect(function () {
     async function fetchData() {
       setIsLoading(true);

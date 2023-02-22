@@ -17,7 +17,7 @@ function App() {
       try {
         console.log('SERVER_IP:' + process.env.APP_REACT_SERVER_IP);
 
-        const response = await fetch('http://35.154.236.11/goals');
+        const response = await fetch('http://' + process.env.APP_REACT_SERVER_IP + '/goals');
 
         const resData = await response.json();
 
@@ -43,7 +43,7 @@ function App() {
 
     try {
       console.log('SERVER_IP:' + process.env.APP_REACT_SERVER_IP);
-      const response = await fetch('http://35.154.236.11/goals', {
+      const response = await fetch('http://' + process.env.APP_REACT_SERVER_IP + '/goals', {
         method: 'POST',
         body: JSON.stringify({
           text: goalText,
@@ -83,7 +83,7 @@ function App() {
 
     try {
       console.log('SERVER_IP:' + process.env.APP_REACT_SERVER_IP);
-      const response = await fetch('http://35.154.236.11/goals/' + goalId, {
+      const response = await fetch('http://' + process.env.APP_REACT_SERVER_IP + '/goals/' + goalId, {
         method: 'DELETE',
       });
 

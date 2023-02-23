@@ -11,9 +11,27 @@ services:
     # MONGO_INITDB_ROOT_USERNAME: sachin
     env_file:
       - ./env/mongo.env
+  
+  backend:
+    build: ./backend
+    # build: 
+    #   context: ./backend
+    #   dockerfile: Dockerfile
+    #   args:
+    #     - NODE_ENV=development
+    ports:
+      - '80:80'    
+    volumes:
+      - logs:/app/logs
+      - /app/node_modules
+      - ./backend:/app
+    env_file:
+      - ./env/backend.env   
+    depends_on:
+      - mongodb  
 volumes:
   data:
+  logs:
 
-  #backend:
-  #frontend:   
+   
   

@@ -1,0 +1,19 @@
+#version: "3.8" 
+## optional in latest docker-compose
+services:
+  mongodb:
+    image: 'mongo'
+    volumes:
+      - data:/data/db
+    #environment:
+    #  - MONGO_INITDB_ROOT_USERNAME=sachin
+    #  - MONGO_INITDB_ROOT_PASSWORD=secret
+    # MONGO_INITDB_ROOT_USERNAME: sachin
+    env_file:
+      - ./env/mongo.env
+volumes:
+  data:
+
+  #backend:
+  #frontend:   
+  

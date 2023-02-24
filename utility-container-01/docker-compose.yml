@@ -1,0 +1,7 @@
+services:
+  node-util:
+    build: ./
+    volumes:
+      - ./:/app
+    stdin_open: true
+    tty: true 

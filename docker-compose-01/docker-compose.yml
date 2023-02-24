@@ -29,6 +29,19 @@ services:
       - ./env/backend.env   
     depends_on:
       - mongodb  
+
+  frontend:
+    build: ./frontend
+    ports:
+      - '3000:3000'
+    volumes:
+      - /app/node_modules
+      - ./frontend:/app
+    environment:
+      - APP_REACT_SERVER_IP=localhost
+    depends_on:
+      - backend 
+      
 volumes:
   data:
   logs:

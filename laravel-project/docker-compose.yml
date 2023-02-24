@@ -6,7 +6,8 @@ services:
     volumes:
       - ./src:/var/www/html:delegated
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro  
-    depends_on: phpapp
+    depends_on: 
+      - phpapp
 
   phpapp:
     build: 
@@ -14,8 +15,9 @@ services:
       dockerfile: php.dockerfile
     volumes:
       - ./src:/var/www/html:delegated
-    depends_on: mysqldb
-      
+    depends_on: 
+      - mysqldb
+
   mysqldb:
     image: 'mysql:5.7'
     env_file:

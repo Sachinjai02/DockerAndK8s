@@ -5,7 +5,7 @@ services:
       - '8000:80'
     volumes:
       - ./src:/var/www/html:delegated
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro  
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro  
   
   phpapp:
     build: 

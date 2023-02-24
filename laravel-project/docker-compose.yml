@@ -37,6 +37,8 @@ services:
     volumes:    
       - ./src:/var/www/html:delegated
     entrypoint: ["php", "/var/www/html/artisan"]
+    depends_on:
+    - mysqldb
   
   npm:
     image: node

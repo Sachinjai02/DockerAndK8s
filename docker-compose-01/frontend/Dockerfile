@@ -10,6 +10,6 @@ COPY . .
 
 EXPOSE 3000
 
-ENV APP_REACT_SERVER_IP=localhost
+ENV REACT_APP_SERVER_IP=localhost
 
 CMD [ "npm", "start" ]

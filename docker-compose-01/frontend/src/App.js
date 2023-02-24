@@ -14,7 +14,7 @@ function App() {
       setIsLoading(true);
 
       try {
-        const response = await fetch(`http://${process.env.APP_REACT_SERVER_IP}/goals`);
+        const response = await fetch(`http://${process.env.REACT_APP_SERVER_IP}/goals`);
 
         const resData = await response.json();
 
@@ -39,7 +39,7 @@ function App() {
     setIsLoading(true);
 
     try {
-      const response = await fetch(`http://${process.env.APP_REACT_SERVER_IP}/goals`, {
+      const response = await fetch(`http://${process.env.REACT_APP_SERVER_IP}/goals`, {
         method: 'POST',
         body: JSON.stringify({
           text: goalText,
@@ -78,7 +78,7 @@ function App() {
     setIsLoading(true);
 
     try {
-      const response = await fetch(`http://${process.env.APP_REACT_SERVER_IP}/goals` + goalId, {
+      const response = await fetch(`http://${process.env.REACT_APP_SERVER_IP}/goals` + goalId, {
         method: 'DELETE',
       });
 

@@ -15,9 +15,9 @@ services:
       
   mysqldb:
     image: 'mysql:5.7'
-    env-file: 
-     - ./env/mysql.env
-  
+    env_file:
+      - ./env/mysql.env
+      
   composer:
     build:
       context: ./dockerfiles

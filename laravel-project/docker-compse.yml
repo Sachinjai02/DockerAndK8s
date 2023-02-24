@@ -1,0 +1,29 @@
+services:
+  webserver:
+    image: 'nginx:stable-alpine'
+    ports:
+      -'8000:80'
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro  
+  
+  phpapp:
+    build: 
+      context: ./dockerfiles
+      dockerfile: php.dockerfile
+    volumes:
+      - ./src:/var/www/html:delegated
+      
+  mysqldb:
+    image: 'mysql:5.7'
+    env-file: 
+     - ./env/mysql.env
+  
+  composer:
+    build:
+      context: ./dockerfiles
+      dockerfile: composer.dockerfile
+    volumes:    
+      - ./src:/var/www/html:delegated
+      
+  # artisan:
+  # npm:

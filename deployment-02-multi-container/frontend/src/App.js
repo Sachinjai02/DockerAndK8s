@@ -4,7 +4,7 @@ import GoalInput from './components/goals/GoalInput';
 import CourseGoals from './components/goals/CourseGoals';
 import ErrorAlert from './components/UI/ErrorAlert';
 
-
+const backendUrl = 'http://lb56-27624429.us-east-2.elb.amazonaws.com';
 
 function App() {
   const [loadedGoals, setLoadedGoals] = useState([]);
@@ -16,7 +16,7 @@ function App() {
       setIsLoading(true);
 
       try {
-        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/goals`);
+        const response = await fetch(backendUrl + '/goals');
 
         const resData = await response.json();
 
@@ -41,7 +41,7 @@ function App() {
     setIsLoading(true);
 
     try {
-      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/goals`, {
+      const response = await fetch(backendUrl + '/goals', {
         method: 'POST',
         body: JSON.stringify({
           text: goalText,
@@ -80,7 +80,7 @@ function App() {
     setIsLoading(true);
 
     try {
-      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/goals/` + goalId, {
+      const response = await fetch(backendUrl + '/goals' + goalId, {
         method: 'DELETE',
       });
 

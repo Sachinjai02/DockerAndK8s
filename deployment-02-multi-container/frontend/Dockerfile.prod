@@ -20,7 +20,7 @@ COPY --from=build-stage /app/build /usr/share/nginx/html
 
 EXPOSE 80
 
-ENV backendUrl=http://localhost:80/
+ENV REACT_APP_BACKEND_URL=http://localhost
 
 CMD ["nginx", "-g", "daemon off;"]
 

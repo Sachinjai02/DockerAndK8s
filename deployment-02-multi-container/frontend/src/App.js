@@ -4,7 +4,7 @@ import GoalInput from './components/goals/GoalInput';
 import CourseGoals from './components/goals/CourseGoals';
 import ErrorAlert from './components/UI/ErrorAlert';
 
-const backendUrl = 'http://lb56-27624429.us-east-2.elb.amazonaws.com';
+const backendUrl = 'http://localhost';
 
 function App() {
   const [loadedGoals, setLoadedGoals] = useState([]);

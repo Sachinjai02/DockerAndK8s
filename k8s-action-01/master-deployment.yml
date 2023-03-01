@@ -39,5 +39,11 @@ spec:
     spec:
       containers:
        - name: second-node
-         image: sachinjai02/kub-learnings:first-app-v2    
+         image: sachinjai02/kub-learnings:first-app-v2
+         livenessProbe: 
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 20
+            periodSeconds: 10   
      

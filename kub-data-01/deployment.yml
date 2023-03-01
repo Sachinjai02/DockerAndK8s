@@ -15,6 +15,6 @@ spec:
       containers:
         - name: story
           image: sachinjai02/kub-learnings:story-app-v1
-          imagepullpolicy: Always
+          imagePullPolicy: Always
           
           

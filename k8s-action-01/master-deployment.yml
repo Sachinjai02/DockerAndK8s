@@ -19,11 +19,14 @@ kind: Deployment
 metadata:
   name: second-app-deployment
 spec:
-  replicas: 3
+  replicas: 1
   selector:
-    matchLabels:
-      app: second-app
-      tier: backend
+    # matchLabels:
+    #   app: second-app
+    #   tier: backend
+    matchExpressions:
+      - {key: app, operator: In, values: [second-app, first-app]}
+      - {key: tier, operator: NotIn, values: [frontend]}
   template:
     metadata:
       labels:

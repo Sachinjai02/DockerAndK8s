@@ -5,6 +5,7 @@ const app = express();
 app.get('/', (req, res) => {
   res.send(`
     <h1>Hello from this NodeJS app!</h1>
+    <p>Changing the code to see k8s feature of updating and reverting deployments</p>
     <p>Try sending a request to /error and see what happens</p>
   `);
 });

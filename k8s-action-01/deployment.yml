@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
        - name: second-node
-         image: sachinjai02/kub-learnings:first-app    
+         image: sachinjai02/kub-learnings:first-app-v2    

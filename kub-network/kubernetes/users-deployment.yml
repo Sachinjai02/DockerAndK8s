@@ -16,7 +16,7 @@ spec:
         - name: users
           image: sachinjai02/kub-learnings:user-app-v1    
           imagePullPolicy: Always
-          environment:
+          env:
             - name: AUTH_ADDRESS
               value: localhost
         - name: auth

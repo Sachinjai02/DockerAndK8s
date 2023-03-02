@@ -4,8 +4,6 @@ WORKDIR /app
 
 COPY package.json .
 
-ENV AUTH_ADDRESS=auth
-
 RUN npm install
 
 COPY . .

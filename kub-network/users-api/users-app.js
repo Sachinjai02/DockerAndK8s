@@ -58,9 +58,9 @@ app.post('/login', async (req, res) => {
     `http://${process.env.AUTH_ADDRESS}/token/` + hashedPassword + '/' + password
   );
   // const response = {status:200, data: {token:'abc'}};
-  // if (response.status === 200) {
-  //   return res.status(200).json({ token: response.data.token });
-  // }
+  if (response.status === 200) {
+    return res.status(200).json({ token: response.data.token });
+  }
   return res.status(response.status).json({ message: 'Logging in failed!' });
 });
 

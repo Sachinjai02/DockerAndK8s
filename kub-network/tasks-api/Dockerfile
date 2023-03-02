@@ -2,6 +2,10 @@ FROM node:14-alpine
 
 WORKDIR /app
 
+ENV TASKS_FOLDER=tasks
+
+RUN MKDIR $TASKS_FOLDER
+
 COPY package.json .
 
 RUN npm install

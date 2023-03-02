@@ -4,7 +4,7 @@ WORKDIR /app
 
 ENV TASKS_FOLDER=tasks
 
-RUN MKDIR $TASKS_FOLDER
+RUN mkdir $TASKS_FOLDER
 
 COPY package.json .
 

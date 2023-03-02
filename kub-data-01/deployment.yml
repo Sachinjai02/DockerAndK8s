@@ -14,8 +14,11 @@ spec:
     spec: 
       containers:
         - name: story
-          image: sachinjai02/kub-learnings:story-app-v1
+          image: sachinjai02/kub-learnings:story-app-v2
           imagePullPolicy: Always
+          env:
+            - name: STORY_FOLDER
+              value: story
           volumeMounts:
            - name: story-volume
              mountPath: /app/story

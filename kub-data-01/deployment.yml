@@ -17,8 +17,12 @@ spec:
           image: sachinjai02/kub-learnings:story-app-v2
           imagePullPolicy: Always
           env:
-            - name: STORY_FOLDER
-              value: story
+             - name: STORY_FOLDER
+            #  value: story
+               valueFrom:
+                  configMapKeyRef:
+                    name: story-config
+                    key: folder           
           volumeMounts:
            - name: story-volume
              mountPath: /app/story

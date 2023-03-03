@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: users
-          image: sachinjai02/kub-learnings:user-app-v2   
+          image: sachinjai02/kub-learnings:user-app-v3   
           imagePullPolicy: Always
           env:
             - name: AUTH_ADDRESS

@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
         - name: auth-api
-          image: academind/kub-dep-auth:latest
+          image: sachinjai02/kub-learnings:auth-dep-v1
           env:
             - name: TOKEN_KEY
               value: 'shouldbeverysecure'

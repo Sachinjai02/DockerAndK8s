@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
        - name: tasks
-         image: sachinjai02/kub-learnings:tasks-app-v1
+         image: sachinjai02/kub-learnings:tasks-app-v2
          env:
           - name: AUTH_ADDRESS
             value: "auth-service.default"

@@ -28,6 +28,7 @@ spec:
       containers:
         - name: users-api
           image: sachinjai02/kub-learnings:users-dep-v1
+          imagePullPolicy: Always
           env:
             - name: MONGODB_CONNECTION_URI
               value: 'mongodb+srv://sachin:)6V,z2w6SDnpJC@@clusterdemo.zdu6ash.mongodb.net/?retryWrites=true&w=majority'

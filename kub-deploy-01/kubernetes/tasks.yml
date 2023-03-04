@@ -5,9 +5,11 @@ metadata:
 spec:
   selector:
     app: tasks
-
-
-
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
 
 ---
 

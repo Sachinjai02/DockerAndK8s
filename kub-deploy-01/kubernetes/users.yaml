@@ -34,3 +34,10 @@ spec:
               value: 'mongodb+srv://sachin:)6V,z2w6SDnpJC@@clusterdemo.zdu6ash.mongodb.net/?retryWrites=true&w=majority'
             - name: AUTH_API_ADDRESSS
               value: 'auth-service.default:3000'
+          volumeMounts:
+            - name: users-vol
+              mountPath: /app/users    
+      volumes:
+        - name: users-vol
+          persistentVolumeClaim:
+            claimName: users-pvc
